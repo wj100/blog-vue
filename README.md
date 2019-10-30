@@ -3,7 +3,9 @@
 > A Vue.js project
 
 #个人博客系统,包括登录,发布,评论,阅读
+
 #前端运用vue-cli+axios+vue-router+vuex+less
+
 #后端使用node+exrepss+mysql实现简单的CRUD
 
 ``` bash
