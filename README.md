@@ -1,11 +1,10 @@
-# demo
+# blog-vue
 
 > A Vue.js project
 
-## Build Setup
-##一个空的vue项目
-##安装了less,vuex,封装了axios等
-##这是masterr
+##个人博客系统,包括登录,发布,评论,阅读
+##前端运用vue-cli+axios+vue-router+vuex+less
+##后端使用node+exrepss+mysql实现简单的CRUD
 
 ``` bash
 # install dependencies
