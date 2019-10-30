@@ -1,0 +1,45 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+//网页背景色
+@bgc:#cfd8dc;
+@black:#263238;
+//标题
+@title:#546e7a;
+@info:#78909c;
+//分类标签
+.tag-class{
+  width: 50px;
+  height: 20px;
+  display: flex;
+  border: 1px solid #607d8b;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  background: #cfd8dc;
+  color: #607d8b;
+  font-size: 1rem;
+}
+//修改滚动条样式
+::-webkit-scrollbar {
+  width: .5rem;
+  height: .5rem;
+  background: hsla(0, 0%, 100%, 0.6);
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 0;
+  background-color: rgba(95, 95, 95, .4);
+  transition: all .2s;
+  border-radius: .5rem;
+
+  &:hover {
+    background-color: rgba(95, 95, 95, .7);
+  }
+}
