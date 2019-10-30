@@ -2,9 +2,9 @@
 
 > A Vue.js project
 
-##个人博客系统,包括登录,发布,评论,阅读
-##前端运用vue-cli+axios+vue-router+vuex+less
-##后端使用node+exrepss+mysql实现简单的CRUD
+#个人博客系统,包括登录,发布,评论,阅读
+#前端运用vue-cli+axios+vue-router+vuex+less
+#后端使用node+exrepss+mysql实现简单的CRUD
 
 ``` bash
 # install dependencies
@@ -20,4 +20,4 @@ npm run build
 npm run build --report
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+第一个开源项目,写的不好,请多指教
