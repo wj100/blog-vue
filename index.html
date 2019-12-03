@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
     <script type="text/javascript" src="./static/config.js"></script>
     <title>demo</title>
   </head>
@@ -10,4 +11,8 @@
     <div id="app"></div>
     <!-- built files will be auto injected -->
   </body>
+  <script type="text/javascript">
+    console.log(returnCitySN["cip"]+','+returnCitySN["cname"])
+    window.sessionStorage.setItem("position",JSON.stringify(returnCitySN["cname"]))
+  </script>
 </html>

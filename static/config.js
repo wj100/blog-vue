@@ -6,4 +6,4 @@ window.g = {
     BtnsApi: '/api/services/app/Authorization/GetBtns',
     OrgsApi: '/api/services/app/authorization/GetOrgsByUserId'
   }
-}
+};

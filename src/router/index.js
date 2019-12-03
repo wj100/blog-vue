@@ -5,18 +5,18 @@ import Index from '@/components/Page/Index'
 import Blog from "@/components/Page/Blog";
 import Markdown from "@/components/Page/Markdown";
 import ArticleList from "@/components/Page/ArticleList";
+import RichText from "@/components/Page/RichText";
 
 
-
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
-  mode:'history',
+  mode:'hash',
   routes: [
     {
       path: '/',
       name: 'Login',
-      component: Login
+      redirect: '/index'//重定向
     },
     {
       path: '/index',
@@ -40,6 +40,11 @@ export default new Router({
       path: '/markdown',
       name: 'Markdown',
       component: Markdown
+    },
+    {
+      path: '/richText',
+      name: 'richText',
+      component: RichText
     }
   ]
 })
