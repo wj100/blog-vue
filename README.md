@@ -2,11 +2,11 @@
 
 > A Vue.js project
 
-#个人博客系统,包括登录,发布,评论,阅读
+# 个人博客系统,包括文章的增删改查.评论.分类.搜索
 
-#前端运用vue-cli+axios+vue-router+vuex+less
+# 前端运用vue-cli+axios+vue-router+vuex+less
 
-#后端使用node+exrepss+mysql实现简单的CRUD
+# 使用localStorage进行权限控制
 
 ``` bash
 # install dependencies

@@ -1,6 +1,5 @@
 <template>
   <div class="articleList">
-    <button class="bttn-unite bttn-md bttn-primary">medium</button>
     <div class="noData" v-if="list.length===0">
       <i class="el-icon-document"></i>
       <p>该分类下暂无文章</p>
