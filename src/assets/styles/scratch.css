@@ -1,0 +1,13 @@
+@media screen and (max-width: 1023px) {
+  #app {
+    position: relative;
+    display: none;
+  }
+  #app ::after{
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    content: "换个大点的屏幕来!";
+  }
+}

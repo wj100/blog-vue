@@ -45,6 +45,7 @@
 <script>
   import {mavonEditor} from 'mavon-editor'
   import 'mavon-editor/dist/css/index.css'
+
   export default {
     name: "Markdown",
     components: {
@@ -55,7 +56,7 @@
         formInline: {
           title: "",
           content: '',
-          author: "汪骏",
+          author: '汪骏',
           type: ""
         },
         typeOptions: [
@@ -72,12 +73,20 @@
             label: 'VUE'
           },
           {
-            value: '网络协议',
+            value: 'network',
             label: '网络协议'
           },
           {
-            value: '信息安全',
-            label: '信息安全'
+            value: 'node',
+            label: 'Node'
+          },
+          {
+            value: 'dataBase',
+            label: '数据库'
+          },
+          {
+            value: 'other',
+            label: '其它'
           },
         ],
         markdownOption: {
@@ -117,12 +126,13 @@
         }
       }
     },
-    created(){
-      this.editContent()
+    computed: {},
+    created() {
+      this.editContent();
     },
     methods: {
-      editContent(){
-        this.formInline.content=this.$store.state.content;
+      editContent() {
+        this.formInline.content = this.$store.state.content;
       },
       changeMavon() {
       },

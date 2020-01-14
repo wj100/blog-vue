@@ -77,7 +77,10 @@
 </script>
 
 <style scoped lang="less">
-
+.articleList{
+  height: 100vh;
+  overflow: auto;
+}
   .article-list-item {
     padding: 2vmin;
     border-bottom: 1px solid #eee;

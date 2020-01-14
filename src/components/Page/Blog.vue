@@ -3,7 +3,7 @@
     <p class="blog-title">{{title}}</p>
     <div class="blog-article" v-html="article"></div>
     <div class="blog-comment">
-      <span><i ></i>最新评论</span>
+      <p style="border-top: 1px dashed #15ffa7;">留言区</p>
       <ol>
         <li v-for="(comment,index) in commentList.slice(0,10)" :key="comment.id">
           <span class="position" v-backGround>
@@ -39,9 +39,7 @@
     methods: {
       getBlog() {
         this.$get('/blog/getArticle?id=' + this.$route.query.id).then((res) => {
-          console.log(res.data);
           this.title = res.data.title;
-          console.log(marked(res.data.content));
           this.article = addStyle(res.data.content);
         });
       },
@@ -75,6 +73,8 @@
 <style scoped lang="less">
   .blog {
     padding: 2vw;
+    height: 100vh;
+    overflow: auto;
   }
 
   .blog-title {

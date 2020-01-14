@@ -2,8 +2,7 @@
   <div class="index">
     <div class="cover-up" v-if="showCoverUp">
       <div>
-        <input type="text" placeholder="请输入授权码,回车确认" v-model="passKey" @keydown.13="sureAuthority()">
-        <!--<button @click="sureAuthority()">确定</button>-->
+        <input type="password" placeholder="请输入授权码,回车确认" v-model="passKey" @keydown.13="sureAuthority()">
       </div>
     </div>
     <div class="line"></div>
@@ -24,9 +23,6 @@
               secondHandColor="#455a64"
             />
           </div>
-          <!--<div class="me">-->
-            <!--<img src="../../assets/img/me1_1.jpg"/>-->
-          <!--</div>-->
           <span class="wj-button-green" @click="gotoPublish()">发布文章</span>
           <div class="search">
             <input type="text" placeholder="请输入文章标题..." v-model="searchKey" @keyup.13="searchArticle(searchKey)">
@@ -72,19 +68,11 @@
               <el-menu-item index="dataBase">数据库</el-menu-item>
             </el-menu-item-group>
           </el-submenu>
-          <el-submenu index="3">
-            <template slot="title">
-              <i class="el-icon-service"></i>
-              <span>娱乐至上</span>
-            </template>
-            <el-menu-item-group>
-              <el-menu-item index="movie">电影排行</el-menu-item>
-            </el-menu-item-group>
-            <el-menu-item-group>
-              <el-menu-item index="music">热门音乐</el-menu-item>
-            </el-menu-item-group>
-          </el-submenu>
-          <el-menu-item index="4">
+          <el-menu-item index="other">
+            <i class="el-icon-zoom-in"></i>
+            <span slot="title">其它技术</span>
+          </el-menu-item>
+          <el-menu-item index="life">
             <i class="el-icon-edit-outline"></i>
             <span slot="title">生活随笔</span>
           </el-menu-item>
@@ -130,6 +118,7 @@
           localStorage.setItem("passKey", JSON.stringify(this.passKey))
         }
       },
+      //点击发布按钮
       gotoPublish() {
         if (this.$store.state.isAdmin) {
           this.$router.push('/markdown');
@@ -145,7 +134,9 @@
           this.$store.commit("setList", res.data)
         });
       },
+      //选中菜单
       selectMenu(v) {
+        console.log(v);
         this.getList(v);
         this.$router.push('/index')
       },

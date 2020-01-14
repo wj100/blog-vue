@@ -5,7 +5,6 @@
 </template>
 
 <script>
-  import Login from './components/Login'
   export default {
     name: 'App',
     created(){
@@ -16,7 +15,7 @@
 
     },
     components: {
-      // Login
+
     }
   }
 </script>
@@ -32,6 +31,7 @@
   #app {
     height: 100vh;
     width: 100vw;
-    overflow: hidden;  }
+    overflow: hidden;
+      }
 
 </style>
