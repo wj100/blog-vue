@@ -1,18 +1,19 @@
+<!--暂时没有上-->
 <template>
   <el-container class="login_background">
     <!--<div class="clock">-->
-      <!--<h3>WJUNE211</h3>-->
-      <!--<AnalogClock-->
-        <!--borderColor="#546e7a"-->
-        <!--backgroundColor="#FFF"-->
-        <!--scaleType="roman"-->
-        <!--scaleColor="#455a64"-->
-        <!--hourColor="#607d8b"-->
-        <!--handType="line"-->
-        <!--hourHandColor="#263238"-->
-        <!--minuteHandColor="#37474f"-->
-        <!--secondHandColor="#455a64"-->
-      <!--/>-->
+    <!--<h3>WJUNE211</h3>-->
+    <!--<AnalogClock-->
+    <!--borderColor="#546e7a"-->
+    <!--backgroundColor="#FFF"-->
+    <!--scaleType="roman"-->
+    <!--scaleColor="#455a64"-->
+    <!--hourColor="#607d8b"-->
+    <!--handType="line"-->
+    <!--hourHandColor="#263238"-->
+    <!--minuteHandColor="#37474f"-->
+    <!--secondHandColor="#455a64"-->
+    <!--/>-->
     <!--</div>-->
     <img src="../assets/img/diqiu2.png" height="500" width="500"/>
     <div class="login-box">
@@ -85,25 +86,19 @@
     },
 
     methods: {
-      //http://192.168.2.32:8080/data-operation/login/in?username=admin&password=admin
       loginIn(form) {
         this.$refs.ruleForm.validate((valid) => {
           if (valid) {
+            if (screen.width<500){
+              alert("暂不支持小屏设备!请使用电脑或平板");
+              return
+            }
             this.$post('/blog/login', {
               username: this.ruleForm.name,
               password: this.ruleForm.password
             }).then((res) => {
-              if (res && res.code == 200) {
                 this.$router.push({path: `/index`});
-              } else {
-                // 提示登录失败原因
-                this.$message.warning(res.message);
-              }
-            }).catch((err) => {
-                console.log('fail', err);
-                //提示登录失败
-                this.$message.warning("参数异常,请重试!");
-              });
+            })
           }
         })
       },
@@ -141,16 +136,19 @@
   .one-input {
     margin-bottom: 20px;
   }
-.clock{
-  position: relative;
-  & h3{
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 80px;
-    color: #bbb;
+
+  .clock {
+    position: relative;
+
+    & h3 {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 80px;
+      color: #bbb;
+    }
   }
-}
+
   .login-box {
     padding: 100px 170px 200px;
     border-radius: 10px;
@@ -158,6 +156,7 @@
     width: 600px;
     background: url("../assets/img/9.png");
     background-size: 600px 500px;
+
     & > i {
       display: inline-block;
       text-align: center;
@@ -368,6 +367,7 @@
     border: 1px solid #00291D;
     color: #fff;
   }
+
   /deep/ .login-box input.el-input__inner::placeholder {
     color: #666;
   }
@@ -377,4 +377,28 @@
     border: 1px solid #006146;
   }
 
+  //媒体查询1200以下
+  @media screen and (max-width: 1200px) {
+    .login_background {
+      & img {
+        display: none;
+      }
+
+      & .login-box {
+        /*margin: auto;*/
+
+      }
+    }
+  }
+  @media screen and (max-width: 500px) {
+    .login_background {
+      & img {
+          display: none;
+      }
+
+      & .login-box {
+        transform: scale(.7) translateX(-20px);
+      }
+    }
+  }
 </style>

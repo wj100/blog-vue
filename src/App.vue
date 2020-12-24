@@ -5,17 +5,19 @@
 </template>
 
 <script>
-  import Login from './components/Login'
-
   export default {
-  name: 'App',
-  methods:{
+    name: 'App',
+    created(){
 
-  },
-    components:{
-   // Login
+    },
+    methods: {
+
+
+    },
+    components: {
+
     }
-}
+  }
 </script>
 
 <style scoped lang="less">
@@ -25,14 +27,11 @@
     box-sizing: border-box;
   }
 
-html{
-  font-size: 62.5%;
-}
+
   #app {
-    overflow: hidden;
-    /*min-width: 1300px;*/
     height: 100vh;
     width: 100vw;
-  }
+    overflow: hidden;
+      }
 
 </style>

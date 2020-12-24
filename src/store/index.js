@@ -5,6 +5,8 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {          //状态
+    isAdmin: localStorage.getItem("passKey") || null,//管理员标记--进行权限判断
+    content: '',//文章内容
     showLoading: true,//显示loading标记
     articleList: [//文章列表
       {
@@ -27,9 +29,14 @@ export default new Vuex.Store({
 
   },
   mutations: {    //更改 Vuex 的 store 中的状态的唯一方法是提交 mutation
-    setList(state,list){
-      state.articleList=list
-    }
+    /*文章列表*/
+    setList(state, list) {
+      state.articleList = list
+    },
+    /*文章内容*/
+    setContent(state, content) {
+      state.content = content
+    },
   },
   actions: {        //actions不是必须的，但是在运用到异步时就要用到actions例如setTimeOut
 

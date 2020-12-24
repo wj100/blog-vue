@@ -12,7 +12,7 @@ module.exports = {
     proxyTable: {
       //配置代理跨域
       // '/api': {
-      //   target:'http://192.168.2.31:8002/data-store',
+      //   target:'http://192.168.2.92:3000/data-store',
       //   // secure: false, // 如果是https接口，需要配置这个参数
       //   changeOrigin:true,
       //   pathRewrite:{
@@ -22,9 +22,9 @@ module.exports = {
     },
 
     // Various Dev Server settings
-    host: 'localhost', // can be overwritten by process.env.HOST
+    host: '192.168.2.92', // can be overwritten by process.env.HOST
     port: 8000, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
-    autoOpenBrowser: false,
+    autoOpenBrowser: true,
     errorOverlay: true,
     notifyOnErrors: true,
     poll: false, // https://webpack.js.org/configuration/dev-server/#devserver-watchoptions-

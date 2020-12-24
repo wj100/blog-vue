@@ -1,6 +1,5 @@
 <template>
   <div class="index">
-    首页
     <quill-editor
       v-model="content"
       ref="myQuillEditor"

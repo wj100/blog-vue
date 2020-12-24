@@ -1,37 +1,27 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Login from '@/components/Login'
-import Index from '@/components/Page/Index'
-import Blog from "@/components/Page/Blog";
-import Markdown from "@/components/Page/Markdown";
-import ArticleList from "@/components/Page/ArticleList";
-
-
-
-Vue.use(Router)
-
+Vue.use(Router);
 export default new Router({
-  mode:'history',
+  mode:'hash',
   routes: [
     {
       path: '/',
-      name: 'Login',
-      component: Login
+      redirect: '/index'//重定向
     },
     {
       path: '/index',
       name: 'Index',
-      component: Index,
+      component: () => import('@/components/Page/Index'),
       children:[
         {
           path: '/index/blog',
           name: 'Blog',
-          component: Blog
+          component: () => import('@/components/Page/Blog'),
         },
         {
           path: '/index',
           name: 'ArticleList',
-          component: ArticleList
+          component: () => import('@/components/Page/ArticleList'),
         },
       ]
     },
@@ -39,7 +29,12 @@ export default new Router({
     {
       path: '/markdown',
       name: 'Markdown',
-      component: Markdown
+      component: () => import('@/components/Page/Markdown'),
+    },
+    {
+      path: '/richText',
+      name: 'richText',
+      component: () => import('@/components/Page/RichText'),
     }
   ]
 })
