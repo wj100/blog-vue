@@ -26,7 +26,7 @@
                     v-model="ruleForm.name">
           </el-input>
         </el-form-item>
-        <el-form-item prop="password" class="one-input">
+        <el-form-item prop="password" class="one-input">   
           <el-input placeholder="password"
                     prefix-icon="el-icon-lock"
                     v-model="ruleForm.password"
