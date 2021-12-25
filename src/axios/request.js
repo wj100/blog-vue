@@ -3,7 +3,7 @@ import {showLoading, hideLoading} from './loading'
 import {Message} from 'element-ui';
 import store from "../store";
 
-axios.defaults.timeout = 5000;
+axios.defaults.timeout = 10000;
 axios.defaults.baseURL = process.env.API_ROOT;
 
 //http request 请求拦截器

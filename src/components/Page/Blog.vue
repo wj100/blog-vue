@@ -5,7 +5,7 @@
     <div class="blog-comment">
       <p style="border-top: 1px dashed #15ffa7;">留言区</p>
       <ol>
-        <li v-for="(comment,index) in commentList.slice(0,10)" :key="comment.id">
+        <li v-for="(comment) in commentList.slice(0,10)" :key="comment.id">
           <span class="position" v-backGround>
             <span>{{comment.position.slice(0,comment.position.indexOf("省"))}}</span>
             <span>{{comment.position.slice(comment.position.indexOf("省")+1,-1)}}</span>
